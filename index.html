@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ultimate Weather App</title>
+
+<!-- Google Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+
+<!-- Leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- CSS -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="rain" id="rain"></div>
+
+<div class="container">
+
+    <h1>🌍 My Weather</h1>
+
+    <!-- Search -->
+    <div class="search-box">
+        <input type="text" id="cityInput" placeholder="Enter City">
+        <button onclick="getWeather()">Search</button>
+        
+    </div>
+
+    <!-- Favorites -->
+    <div class="favorites">
+        <button onclick="saveCity()">⭐ Save City</button>
+        <select id="savedCities" onchange="loadSavedCity()"></select>
+    </div>
+
+    <!-- Map -->
+    <div id="map"></div>
+
+    <!-- Weather Info -->
+    <div class="weather-box" id="weatherBox">
+        <h2 id="cityName"></h2>
+        <img id="icon">
+        <h3 id="temp"></h3>
+        <p id="feels"></p>
+        <p id="desc"></p>
+
+        <div class="details">
+            <div>Humidity <span id="humidity"></span></div>
+            <div>Wind <span id="wind"></span></div>
+            <div>Pressure <span id="pressure"></span></div>
+        </div>
+
+        <div class="sun">
+            🌅 <span id="sunrise"></span> | 🌇 <span id="sunset"></span>
+        </div>
+
+        <div class="ai-suggestion" id="aiSuggestion"></div>
+    </div>
+
+    <!-- Charts -->
+    <div class="charts">
+        <canvas id="tempChart"></canvas>
+    </div>
+    <!-- Weekly Forecast -->
+   
+
+    <!-- Alerts -->
+    <div class="alerts" id="alerts"></div>
+
+</div>
+
+<!-- JS -->
+<script src="script.js"></script>
+</body>
+</html>
